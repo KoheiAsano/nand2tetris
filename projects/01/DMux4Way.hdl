@@ -26,7 +26,6 @@ CHIP DMux4Way {
     And(a=sel1inv, b=tmpb, out=b);
 
     And(a=sel[1], b=tmpc, out=c);
-
     And(a=sel[1], b=tmpd, out=d);
 
     //
