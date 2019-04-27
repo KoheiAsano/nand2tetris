@@ -1,0 +1,32 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/DMux4Way.hdl
+
+/**
+ * 4-way demultiplexor:
+ * {a, b, c, d} = {in, 0, 0, 0} if sel == 00
+ *                {0, in, 0, 0} if sel == 01
+ *                {0, 0, in, 0} if sel == 10
+ *                {0, 0, 0, in} if sel == 11
+ */
+
+CHIP DMux4Way {
+    IN in, sel[2];
+    OUT a, b, c, d;
+
+    PARTS:
+    //まず下位ビットのみで判断
+    DMux(in=in, sel=sel[0], a=tmpa, b=tmpb);
+    DMux(in=in, sel=sel[0], a=tmpc, b=tmpd);
+
+    //上位ビットを見て1ならa,bを消し(And)、0ならc,dを消す
+    Not(in=sel[1], out=sel1inv);
+    And(a=sel1inv, b=tmpa, out=a);
+    And(a=sel1inv, b=tmpb, out=b);
+
+    And(a=sel[1], b=tmpc, out=c);
+    And(a=sel[1], b=tmpd, out=d);
+
+    //
+}
