@@ -41,4 +41,5 @@ if __name__ == "__main__":
             out.write("111" + C.comp(P.comp) + C.dest(P.dest) + C.jump(P.jump) + "\n")
         else:
             continue
+    out.close()
     # print(S.table)
