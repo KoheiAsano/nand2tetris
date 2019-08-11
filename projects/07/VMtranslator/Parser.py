@@ -21,7 +21,7 @@ class Parser:
             coms = l.split(" ")
             # print(coms)
 
-            if coms[0] in ["add", "sub", "neg", "eq", "gt", "lt", "and", "or", "not"]:
+            if coms[0] in {"add", "sub", "neg", "eq", "gt", "lt", "and", "or", "not"}:
                 self.commandType = CommandType.C_ARITHMETIC
                 self.arg0 = coms[0]
                 self.arg1 = 0xffff
