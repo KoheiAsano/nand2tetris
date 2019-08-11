@@ -1,0 +1,201 @@
+//push
+//まずindexずらす
+//データとってくる
+	@3030
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//pop
+//まずindexずらす
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@3
+	M=D
+//indexをもどす
+//push
+//まずindexずらす
+//データとってくる
+	@3040
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//pop
+//まずindexずらす
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@4
+	M=D
+//indexをもどす
+//push
+//まずindexずらす
+//データとってくる
+	@32
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//pop
+//まずindexずらす
+	@2
+	D=A
+	@THIS
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@THIS
+	A=M
+	M=D
+//indexをもどす
+	@2
+	D=A
+	@THIS
+	M=M-D
+//push
+//まずindexずらす
+//データとってくる
+	@46
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//pop
+//まずindexずらす
+	@6
+	D=A
+	@THAT
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@THAT
+	A=M
+	M=D
+//indexをもどす
+	@6
+	D=A
+	@THAT
+	M=M-D
+//push
+//まずindexずらす
+//データとってくる
+	@3
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//push
+//まずindexずらす
+//データとってくる
+	@4
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+//まずindexずらす
+	@2
+	D=A
+	@THIS
+	M=M+D
+//データとってくる
+	@THIS
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+	@2
+	D=A
+	@THIS
+	M=M-D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+//まずindexずらす
+	@6
+	D=A
+	@THAT
+	M=M+D
+//データとってくる
+	@THAT
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+	@6
+	D=A
+	@THAT
+	M=M-D
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+(END)
+	@END
+	0;JMP
