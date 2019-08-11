@@ -1,0 +1,451 @@
+//push
+	@17
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@17
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JEQ
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest0
+	D;JEQ
+	D=0
+	@ECStackTest0
+	0;JMP
+(TStackTest0)
+	D=-1
+	@ECStackTest0
+	0;JMP
+(ECStackTest0)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@17
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@16
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JEQ
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest1
+	D;JEQ
+	D=0
+	@ECStackTest1
+	0;JMP
+(TStackTest1)
+	D=-1
+	@ECStackTest1
+	0;JMP
+(ECStackTest1)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@16
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@17
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JEQ
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest2
+	D;JEQ
+	D=0
+	@ECStackTest2
+	0;JMP
+(TStackTest2)
+	D=-1
+	@ECStackTest2
+	0;JMP
+(ECStackTest2)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@892
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@891
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JLT
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest3
+	D;JLT
+	D=0
+	@ECStackTest3
+	0;JMP
+(TStackTest3)
+	D=-1
+	@ECStackTest3
+	0;JMP
+(ECStackTest3)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@891
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@892
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JLT
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest4
+	D;JLT
+	D=0
+	@ECStackTest4
+	0;JMP
+(TStackTest4)
+	D=-1
+	@ECStackTest4
+	0;JMP
+(ECStackTest4)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@891
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@891
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JLT
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest5
+	D;JLT
+	D=0
+	@ECStackTest5
+	0;JMP
+(TStackTest5)
+	D=-1
+	@ECStackTest5
+	0;JMP
+(ECStackTest5)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@32767
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@32766
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JGT
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest6
+	D;JGT
+	D=0
+	@ECStackTest6
+	0;JMP
+(TStackTest6)
+	D=-1
+	@ECStackTest6
+	0;JMP
+(ECStackTest6)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@32766
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@32767
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JGT
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest7
+	D;JGT
+	D=0
+	@ECStackTest7
+	0;JMP
+(TStackTest7)
+	D=-1
+	@ECStackTest7
+	0;JMP
+(ECStackTest7)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@32766
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@32766
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//JGT
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TStackTest8
+	D;JGT
+	D=0
+	@ECStackTest8
+	0;JMP
+(TStackTest8)
+	D=-1
+	@ECStackTest8
+	0;JMP
+(ECStackTest8)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@57
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@31
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//push
+	@53
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@112
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//-
+	@SP
+	A=M-1
+	M=-M
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M&D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+	@82
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M|D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//!
+	@SP
+	A=M-1
+	M=!M
+(END)
+	@END
+	0;JMP

@@ -1,0 +1,121 @@
+//push
+//まずindexずらす
+//データとってくる
+	@111
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//push
+//まずindexずらす
+//データとってくる
+	@333
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//push
+//まずindexずらす
+//データとってくる
+	@888
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//pop
+//まずindexずらす
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@StaticTest8
+	M=D
+//indexをもどす
+//pop
+//まずindexずらす
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@StaticTest3
+	M=D
+//indexをもどす
+//pop
+//まずindexずらす
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@StaticTest1
+	M=D
+//indexをもどす
+//push
+//まずindexずらす
+//データとってくる
+	@StaticTest3
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//push
+//まずindexずらす
+//データとってくる
+	@StaticTest1
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//push
+//まずindexずらす
+//データとってくる
+	@StaticTest8
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//indexをもどす
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+(END)
+	@END
+	0;JMP
