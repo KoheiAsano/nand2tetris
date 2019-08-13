@@ -1,18 +1,26 @@
 from sys import argv
+import os
 from CommandType import CommandType
 
 class CodeWriter:
     def __init__(self, name):
-        self.out = open(name.split(".")[0] + ".asm", "w")
+        if os.path.isdir(name):
+            self.out = open(name.split(".")[0] + "/" + name.split("/")[-1] + ".asm", "w")
+        else:
+            self.out = open(name.split(".")[0] + ".asm", "w")
         self.fn = ""
         # fn と合わせてloop labelを区別するためのindex
         self.lc = 0
+        # return address一意のためのカウンタ
+        self.rc = 0
         # 本文中 writeInitの処理
         self.out.write("//init\n")
         self.out.write("\t@256\n")
         self.out.write("\tD=A\n")
         self.out.write("\t@SP\n")
         self.out.write("\tM=D\n")
+        self.out.write("\t@Sys.init\n")
+        self.out.write("\t0;JMP\n")
         self.out.write("//initend\n")
 
     def setFileName(self, fileName):
@@ -279,13 +287,111 @@ class CodeWriter:
         self.out.write("//if" + label + "end\n")
         return
 
-    def writeCall(self):
+    def writeCall(self, functionName, numArgs):
+        self.out.write("//call" + functionName + str(numArgs) + "\n")
+        # return addressをpush
+        returnAddress = "re" + functionName + str(self.rc)
+        self.rc += 1
+        self.out.write("\t@" + returnAddress + "\n")
+        self.out.write("\tD=A\n")
+        self.out.write("\t@SP\n")
+        self.out.write("\tM=M+1\n")
+        self.out.write("\tA=M-1\n")
+        self.out.write("\tM=D\n")
+        # リストの順番で４つ前の状態をスタックにpush
+        for b in ["LCL", "ARG", "THIS", "THAT"]:
+            self.out.write("\t@"+ b+"\n")
+            self.out.write("\tD=M\n")
+            self.out.write("\t@SP\n")
+            self.out.write("\tM=M+1\n")
+            self.out.write("\tA=M-1\n")
+            self.out.write("\tM=D\n")
+
+        # 引数は↑でpushした５つから、numArgsさかのぼったところまで
+        self.out.write("\t@SP\n")
+        self.out.write("\tD=M\n")
+        self.out.write("\t@" + str(numArgs) +"\n")
+        self.out.write("\tD=D-A\n")
+        self.out.write("\t@5\n")
+        self.out.write("\tD=D-A\n")
+        self.out.write("\t@ARG\n")
+        self.out.write("\tM=D\n")
+
+        # Local変数は上のあとのspにする
+        self.out.write("\t@SP\n")
+        self.out.write("\tD=M\n")
+        self.out.write("\t@LCL\n")
+        self.out.write("\tM=D\n")
+
+        # 関数へ飛ぶ
+        self.writeGoto(functionName)
+
+        # return addressはここにくるはず
+        self.out.write("(" + returnAddress + ")\n")
+        self.out.write("//call" + functionName + str(numArgs) + "end\n")
         return
 
     def writeReturn(self):
+        self.out.write("//return\n")
+        # FRAME = LCL,,, localのベースポインタはフレームの先頭
+        self.out.write("\t@LCL\n")
+        self.out.write("\tD=M\n")
+        self.out.write("\t@FRAME\n")
+        self.out.write("\tM=D\n")
+
+        # *ARG = pop()関数の戻り地を別の場所に移す(ARGは前のStackの一番上から並べたからARGへ)
+        # pop
+        self.out.write("\t@SP\n")
+        self.out.write("\tM=M-1\n")
+        self.out.write("\tA=M\n")
+        self.out.write("\tD=M\n")
+        # *ARG = D
+        self.out.write("\t@ARG\n")
+        self.out.write("\tA=M\n")
+        self.out.write("\tM=D\n")
+
+        #のちのためにDへARGのアドレスをいれる
+        # SP = ARG+1
+        self.out.write("\t@ARG\n")
+        self.out.write("\tD=M\n")
+        self.out.write("\t@SP\n")
+        self.out.write("\tM=D+1\n")
+        # FRAME基準に前の状態を復元する
+        # ["THAT", "THIS", "ARG", "LCL"] = *(FRAME-["1","2","3","4"])
+
+        for i,b in zip(["1","2","3","4"],["THAT", "THIS", "ARG", "LCL"]):
+
+            self.out.write("\t@" + i + "\n")
+            self.out.write("\tD=A\n")
+
+            self.out.write("\t@FRAME\n")
+            self.out.write("\tA=M-D\n")
+            self.out.write("\tD=M\n")
+            self.out.write("\t@" + b + "\n")
+            self.out.write("\tM=D\n")
+
+        # RET = *(FRAME-5)
+        self.out.write("\t@5\n")
+        self.out.write("\tD=A\n")
+        self.out.write("\t@FRAME\n")
+        self.out.write("\tA=M-D\n")#これのあとのMがreturn address
+        self.out.write("\tA=M\n")
+        self.out.write("\t0;JMP\n")
+
+        self.out.write("//return end\n")
         return
 
-    def writeFunction(self):
+    # 関数の宣言
+    def writeFunction(self, functionName, numLocals):
+        self.out.write("//decl func"+functionName+str(numLocals)+"\n")
+        # まず関数名ラベルの作成
+        self.out.write("(" + functionName + ")\n")
+
+        # local変数の0での初期化
+        for _ in range(numLocals):
+            self.writePushPop(commandType.C_PUSH, "constant", 0)
+        # あとの処理はここではかかない
+        self.out.write("//decl func"+functionName+str(numLocals)+"end\n")
         return
     def close(self):
         self.out.write("(END)\n")

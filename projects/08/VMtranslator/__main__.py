@@ -13,7 +13,8 @@ if __name__ == "__main__":
     C = CodeWriter(argv[1])
     # file name リストを取得
     try:
-        files = os.listdir(argv[1])
+        dirPath = "/".join(argv[1].split("/")) + "/"
+        files = [dirPath + fn for fn in os.listdir(argv[1]) if fn[-3:] == ".vm"]
     except NotADirectoryError:
         files = [argv[1]]
     #それぞれParse, コード生成
@@ -34,7 +35,10 @@ if __name__ == "__main__":
                 C.writeGoto(P.arg0)
             elif P.commandType == CommandType.C_IF:
                 C.writeIf(P.arg0)
-            # elif P.commandType == CommandType.C_FUNCTION:
-            # elif P.commandType == CommandType.C_RETURN:
-            # elif P.commandType == CommandType.C_CALL:
+            elif P.commandType == CommandType.C_FUNCTION:
+                C.writeFunction(P.arg0, P.arg1)
+            elif P.commandType == CommandType.C_RETURN:
+                C.writeReturn()
+            elif P.commandType == CommandType.C_CALL:
+                C.writeCall(P.arg0, P.arg1)
     C.close()
