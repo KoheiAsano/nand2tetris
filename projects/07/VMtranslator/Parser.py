@@ -33,7 +33,7 @@ class Parser:
                 self.commandType = CommandType.C_POP
                 self.arg0 = coms[1]
                 self.arg1 = int(coms[2])
-            elif coms[0][-1] == ":":
+            elif coms[0] == "label":
                 self.commandType = CommandType.C_LABEL
                 self.arg0 = coms[1]
                 self.arg1 = 0xffff
