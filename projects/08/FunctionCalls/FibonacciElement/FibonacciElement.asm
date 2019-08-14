@@ -1,0 +1,481 @@
+	@Sys.init
+	0;JMP
+//decl funcMain.fibonacci0
+(Main.fibonacci)
+//decl funcMain.fibonacci0end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//pushconstant2
+	@2
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant2end
+//lt
+//JLT
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@TMain0
+	D;JLT
+	D=0
+	@ECMain0
+	0;JMP
+(TMain0)
+	D=-1
+	@ECMain0
+	0;JMP
+	(ECMain0)
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//JLTend
+//ltend
+//ifIF_TRUE
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@IF_TRUE
+	D;JNE
+//ifIF_TRUEend
+//gotoIF_FALSE
+	@IF_FALSE
+	0;JMP
+//gotoIF_FALSEend
+//label
+(IF_TRUE)
+//label end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+//label
+(IF_FALSE)
+//label end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//pushconstant2
+	@2
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant2end
+//sub
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//subend
+//callMain.fibonacci1
+	@reMain.fibonacci0
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@1
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoMain.fibonacci
+	@Main.fibonacci
+	0;JMP
+//gotoMain.fibonacciend
+(reMain.fibonacci0)
+//callMain.fibonacci1end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//pushconstant1
+	@1
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant1end
+//sub
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//subend
+//callMain.fibonacci1
+	@reMain.fibonacci1
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@1
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoMain.fibonacci
+	@Main.fibonacci
+	0;JMP
+//gotoMain.fibonacciend
+(reMain.fibonacci1)
+//callMain.fibonacci1end
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//addend
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+//decl funcSys.init0
+(Sys.init)
+//decl funcSys.init0end
+//pushconstant4
+	@4
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant4end
+//callMain.fibonacci1
+	@reMain.fibonacci2
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@1
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoMain.fibonacci
+	@Main.fibonacci
+	0;JMP
+//gotoMain.fibonacciend
+(reMain.fibonacci2)
+//callMain.fibonacci1end
+//label
+(WHILE)
+//label end
+//gotoWHILE
+	@WHILE
+	0;JMP
+//gotoWHILEend
+(END)
+	@END
+	0;JMP

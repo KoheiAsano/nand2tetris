@@ -1,0 +1,702 @@
+//init
+	@261
+	D=A
+	@SP
+	M=D
+	@Sys.init
+	0;JMP
+//decl funcClass1.set0
+(Class1.set)
+//decl funcClass1.set0end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//popstatic0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@Class1.0
+	M=D
+//popstatic0end
+//pushargument1
+	@1
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@1
+	D=A
+	@ARG
+	M=M-D
+//pushargument1end
+//popstatic1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@Class1.1
+	M=D
+//popstatic1end
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+//decl funcClass1.get0
+(Class1.get)
+//decl funcClass1.get0end
+//pushstatic0
+	@Class1.0
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushstatic0end
+//pushstatic1
+	@Class1.1
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushstatic1end
+//sub
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//subend
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+//decl funcSys.init0
+(Sys.init)
+//decl funcSys.init0end
+//pushconstant6
+	@6
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant6end
+//pushconstant8
+	@8
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant8end
+//callClass1.set2
+	@Class1.set$RETURN0
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@2
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoClass1.set
+	@Class1.set
+	0;JMP
+//gotoClass1.setend
+(Class1.set$RETURN0)
+//callClass1.set2end
+//poptemp0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@5
+	M=D
+//poptemp0end
+//pushconstant23
+	@23
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant23end
+//pushconstant15
+	@15
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant15end
+//callClass2.set2
+	@Class2.set$RETURN1
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@2
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoClass2.set
+	@Class2.set
+	0;JMP
+//gotoClass2.setend
+(Class2.set$RETURN1)
+//callClass2.set2end
+//poptemp0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@5
+	M=D
+//poptemp0end
+//callClass1.get0
+	@Class1.get$RETURN2
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@0
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoClass1.get
+	@Class1.get
+	0;JMP
+//gotoClass1.getend
+(Class1.get$RETURN2)
+//callClass1.get0end
+//callClass2.get0
+	@Class2.get$RETURN3
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@0
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoClass2.get
+	@Class2.get
+	0;JMP
+//gotoClass2.getend
+(Class2.get$RETURN3)
+//callClass2.get0end
+//label
+(WHILE)
+//label end
+//gotoWHILE
+	@WHILE
+	0;JMP
+//gotoWHILEend
+//decl funcClass2.set0
+(Class2.set)
+//decl funcClass2.set0end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//popstatic0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@Class2.0
+	M=D
+//popstatic0end
+//pushargument1
+	@1
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@1
+	D=A
+	@ARG
+	M=M-D
+//pushargument1end
+//popstatic1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@Class2.1
+	M=D
+//popstatic1end
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+//decl funcClass2.get0
+(Class2.get)
+//decl funcClass2.get0end
+//pushstatic0
+	@Class2.0
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushstatic0end
+//pushstatic1
+	@Class2.1
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushstatic1end
+//sub
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//subend
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+(END)
+	@END
+	0;JMP

@@ -1,0 +1,207 @@
+//init
+	@256
+	D=A
+	@SP
+	M=D
+//initend
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//poplocal0
+	@0
+	D=A
+	@LCL
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@LCL
+	A=M
+	M=D
+	@0
+	D=A
+	@LCL
+	M=M-D
+//poplocal0end
+//label
+(LOOP_START)
+//label end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//pushlocal0
+	@0
+	D=A
+	@LCL
+	M=M+D
+	@LCL
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@LCL
+	M=M-D
+//pushlocal0end
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//addend
+//poplocal0
+	@0
+	D=A
+	@LCL
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@LCL
+	A=M
+	M=D
+	@0
+	D=A
+	@LCL
+	M=M-D
+//poplocal0end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//pushconstant1
+	@1
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant1end
+//sub
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M-D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//subend
+//popargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@0
+	D=A
+	@ARG
+	M=M-D
+//popargument0end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//ifLOOP_START
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@LOOP_START
+	D;JNE
+//ifLOOP_STARTend
+//pushlocal0
+	@0
+	D=A
+	@LCL
+	M=M+D
+	@LCL
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@LCL
+	M=M-D
+//pushlocal0end
+(END)
+	@END
+	0;JMP
