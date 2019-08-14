@@ -1,0 +1,674 @@
+	@Sys.init
+	0;JMP
+//decl funcSys.init0
+(Sys.init)
+//decl funcSys.init0end
+//pushconstant4000
+	@4000
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant4000end
+//poppointer0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@3
+	M=D
+//poppointer0end
+//pushconstant5000
+	@5000
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant5000end
+//poppointer1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@4
+	M=D
+//poppointer1end
+//callSys.main0
+	@reSys.main0
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@0
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoSys.main
+	@Sys.main
+	0;JMP
+//gotoSys.mainend
+(reSys.main0)
+//callSys.main0end
+//poptemp1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@6
+	M=D
+//poptemp1end
+//label
+(LOOP)
+//label end
+//gotoLOOP
+	@LOOP
+	0;JMP
+//gotoLOOPend
+//decl funcSys.main5
+(Sys.main)
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//pushconstant0
+	@0
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant0end
+//decl funcSys.main5end
+//pushconstant4001
+	@4001
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant4001end
+//poppointer0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@3
+	M=D
+//poppointer0end
+//pushconstant5001
+	@5001
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant5001end
+//poppointer1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@4
+	M=D
+//poppointer1end
+//pushconstant200
+	@200
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant200end
+//poplocal1
+	@1
+	D=A
+	@LCL
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@LCL
+	A=M
+	M=D
+	@1
+	D=A
+	@LCL
+	M=M-D
+//poplocal1end
+//pushconstant40
+	@40
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant40end
+//poplocal2
+	@2
+	D=A
+	@LCL
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@LCL
+	A=M
+	M=D
+	@2
+	D=A
+	@LCL
+	M=M-D
+//poplocal2end
+//pushconstant6
+	@6
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant6end
+//poplocal3
+	@3
+	D=A
+	@LCL
+	M=M+D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@LCL
+	A=M
+	M=D
+	@3
+	D=A
+	@LCL
+	M=M-D
+//poplocal3end
+//pushconstant123
+	@123
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant123end
+//callSys.add121
+	@reSys.add121
+	D=A
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+	@LCL
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@ARG
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THIS
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@THAT
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@SP
+	D=M
+	@1
+	D=D-A
+	@5
+	D=D-A
+	@ARG
+	M=D
+	@SP
+	D=M
+	@LCL
+	M=D
+//gotoSys.add12
+	@Sys.add12
+	0;JMP
+//gotoSys.add12end
+(reSys.add121)
+//callSys.add121end
+//poptemp0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@5
+	M=D
+//poptemp0end
+//pushlocal0
+	@0
+	D=A
+	@LCL
+	M=M+D
+	@LCL
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@LCL
+	M=M-D
+//pushlocal0end
+//pushlocal1
+	@1
+	D=A
+	@LCL
+	M=M+D
+	@LCL
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@1
+	D=A
+	@LCL
+	M=M-D
+//pushlocal1end
+//pushlocal2
+	@2
+	D=A
+	@LCL
+	M=M+D
+	@LCL
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@2
+	D=A
+	@LCL
+	M=M-D
+//pushlocal2end
+//pushlocal3
+	@3
+	D=A
+	@LCL
+	M=M+D
+	@LCL
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@3
+	D=A
+	@LCL
+	M=M-D
+//pushlocal3end
+//pushlocal4
+	@4
+	D=A
+	@LCL
+	M=M+D
+	@LCL
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@4
+	D=A
+	@LCL
+	M=M-D
+//pushlocal4end
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//addend
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//addend
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//addend
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//addend
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+//decl funcSys.add120
+(Sys.add12)
+//decl funcSys.add120end
+//pushconstant4002
+	@4002
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant4002end
+//poppointer0
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@3
+	M=D
+//poppointer0end
+//pushconstant5002
+	@5002
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant5002end
+//poppointer1
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@4
+	M=D
+//poppointer1end
+//pushargument0
+	@0
+	D=A
+	@ARG
+	M=M+D
+	@ARG
+	A=M
+	D=M
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+	@0
+	D=A
+	@ARG
+	M=M-D
+//pushargument0end
+//pushconstant12
+	@12
+	D=A
+	@SP
+	A=M
+	M=D
+	@SP
+	M=M+1
+//pushconstant12end
+//add
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@SP
+	M=M-1
+	A=M
+	D=M+D
+	@SP
+	M=M+1
+	A=M-1
+	M=D
+//addend
+//return
+	@LCL
+	D=M
+	@FRAME
+	M=D
+	@5
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@RET
+	M=D
+	@SP
+	M=M-1
+	A=M
+	D=M
+	@ARG
+	A=M
+	M=D
+	@ARG
+	D=M
+	@SP
+	M=D+1
+	@1
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THAT
+	M=D
+	@2
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@THIS
+	M=D
+	@3
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@ARG
+	M=D
+	@4
+	D=A
+	@FRAME
+	A=M-D
+	D=M
+	@LCL
+	M=D
+	@RET
+	A=M
+	0;JMP
+//return end
+(END)
+	@END
+	0;JMP
