@@ -15,13 +15,36 @@ class CodeWriter:
         self.rc = 0
         # 本文中 writeInitの処理
         self.out.write("//init\n")
-        self.out.write("\t@256\n")
-        self.out.write("\tD=A\n")
-        self.out.write("\t@SP\n")
-        self.out.write("\tM=D\n")
+        # SP = 256
+        # staicktest用(なぜかテストのアドレスが５個ずれている)正しいのか＞？
+        # self.out.write("\t@261\n")
+        # self.out.write("\t@256\n")
+        # self.out.write("\tD=A\n")
+        # self.out.write("\t@SP\n")
+        # self.out.write("\tM=D\n")
+        # LCL = -1
+        # self.out.write("\t@LCL\n")
+        # self.out.write("\tM=-1\n")
+        # # # ARG = -2
+        # # self.out.write("\t@ARG\n")
+        # # self.out.write("\tM=-1\n")
+        # # self.out.write("\tM=M-1\n")
+        # # # THIS = -3
+        # # self.out.write("\t@THIS\n")
+        # # self.out.write("\tM=-1\n")
+        # # self.out.write("\tM=M-1\n")
+        # # self.out.write("\tM=M-1\n")
+        # #
+        # # # THIS = -4
+        # # self.out.write("\t@THIS\n")
+        # # self.out.write("\tM=-1\n")
+        # # self.out.write("\tM=M-1\n")
+        # # self.out.write("\tM=M-1\n")
+        # # self.out.write("\tM=M-1\n")
+
         self.out.write("\t@Sys.init\n")
         self.out.write("\t0;JMP\n")
-        self.out.write("//initend\n")
+        # self.out.write("//initend\n")
 
     def setFileName(self, fileName):
         self.fn = fileName.split("/")[-1][:-3]
@@ -60,7 +83,7 @@ class CodeWriter:
         self.out.write("\tA=M\n")
         # 処理
         self.out.write("\tD=M-D\n")
-        lid = self.fn + str(self.lc)
+        lid = self.fn +"$LOOP" + str(self.lc)
         self.lc += 1
         # trueなら-1にしてくれるところに飛ぶそうでなければ0
         self.out.write("\t@T" +lid + "\n")
@@ -158,9 +181,10 @@ class CodeWriter:
             elif segment == "temp":
                 targ = 5 + index
                 self.out.write("\t@" + str(targ) + "\n")
+
             #Global変数
             elif segment == "static":
-                self.out.write("\t@" + self.fn + str(index) +"\n")
+                self.out.write("\t@" + self.fn +"."+ str(index) +"\n")
 
             # 定数以外はアドレスをたどってデータをとる
             if segment == "constant":
@@ -172,6 +196,7 @@ class CodeWriter:
             self.out.write("\t@SP\n")
             self.out.write("\tA=M\n")
             self.out.write("\tM=D\n")
+
             #stack pointer をincrement
             self.out.write("\t@SP\n")
             self.out.write("\tM=M+1\n")
@@ -238,7 +263,7 @@ class CodeWriter:
                 self.out.write("\t@" + str(targ) + "\n")
             # 新しいGlobal変数
             elif segment == "static":
-                self.out.write("\t@" + self.fn + str(index) +"\n")
+                self.out.write("\t@" + self.fn +"."+ str(index) +"\n")
             # 書き込み
 
             self.out.write("\tM=D\n")
@@ -290,7 +315,7 @@ class CodeWriter:
     def writeCall(self, functionName, numArgs):
         self.out.write("//call" + functionName + str(numArgs) + "\n")
         # return addressをpush
-        returnAddress = "re" + functionName + str(self.rc)
+        returnAddress = functionName +"$RETURN"+ str(self.rc)
         self.rc += 1
         self.out.write("\t@" + returnAddress + "\n")
         self.out.write("\tD=A\n")
@@ -299,13 +324,18 @@ class CodeWriter:
         self.out.write("\tA=M-1\n")
         self.out.write("\tM=D\n")
         # リストの順番で４つ前の状態をスタックにpush
+        #stack pointer に値をセット
+
+
+
         for b in ["LCL", "ARG", "THIS", "THAT"]:
             self.out.write("\t@"+ b+"\n")
             self.out.write("\tD=M\n")
             self.out.write("\t@SP\n")
-            self.out.write("\tM=M+1\n")
-            self.out.write("\tA=M-1\n")
+            self.out.write("\tA=M\n")
             self.out.write("\tM=D\n")
+            self.out.write("\t@SP\n")
+            self.out.write("\tM=M+1\n")
 
         # 引数は↑でpushした５つから、numArgsさかのぼったところまで
         self.out.write("\t@SP\n")
@@ -339,6 +369,15 @@ class CodeWriter:
         self.out.write("\t@FRAME\n")
         self.out.write("\tM=D\n")
 
+        # RET = *(FRAME-5) ... ここで保存しておかないとここは*ARG？なので書き換えられる
+        self.out.write("\t@5\n")
+        self.out.write("\tD=A\n")
+        self.out.write("\t@FRAME\n")
+        self.out.write("\tA=M-D\n")#これのあとのMがreturn address
+        self.out.write("\tD=M\n")
+        self.out.write("\t@RET\n")
+        self.out.write("\tM=D\n")
+
         # *ARG = pop()関数の戻り地を別の場所に移す(ARGは前のStackの一番上から並べたからARGへ)
         # pop
         self.out.write("\t@SP\n")
@@ -370,14 +409,11 @@ class CodeWriter:
             self.out.write("\t@" + b + "\n")
             self.out.write("\tM=D\n")
 
-        # RET = *(FRAME-5)
-        self.out.write("\t@5\n")
-        self.out.write("\tD=A\n")
-        self.out.write("\t@FRAME\n")
-        self.out.write("\tA=M-D\n")#これのあとのMがreturn address
+
+        # 最初に保存したリターンアドレスへ戻る
+        self.out.write("\t@RET\n")
         self.out.write("\tA=M\n")
         self.out.write("\t0;JMP\n")
-
         self.out.write("//return end\n")
         return
 
@@ -389,10 +425,13 @@ class CodeWriter:
 
         # local変数の0での初期化
         for _ in range(numLocals):
-            self.writePushPop(commandType.C_PUSH, "constant", 0)
+            self.writePushPop(CommandType.C_PUSH, "constant", 0)
         # あとの処理はここではかかない
         self.out.write("//decl func"+functionName+str(numLocals)+"end\n")
         return
+
+
+
     def close(self):
         self.out.write("(END)\n")
         self.out.write("\t@END\n")
