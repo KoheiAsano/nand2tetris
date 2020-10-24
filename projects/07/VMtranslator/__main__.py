@@ -28,9 +28,12 @@ if __name__ == "__main__":
                 C.writePushPop(P.commandType, P.arg0, P.arg1)
             elif P.commandType == CommandType.C_POP:
                 C.writePushPop(P.commandType, P.arg0, P.arg1)
-            # elif P.commandType == CommandType.C_LABEL:
-            # elif P.commandType == CommandType.C_GOTO:
-            # elif P.commandType == CommandType.C_IF:
+            elif P.commandType == CommandType.C_LABEL:
+                C.writeLabel(P.arg0)
+            elif P.commandType == CommandType.C_GOTO:
+                C.writeLabel(P.arg0)
+            elif P.commandType == CommandType.C_IF:
+                C.writeLabel(P.arg0)
             # elif P.commandType == CommandType.C_FUNCTION:
             # elif P.commandType == CommandType.C_RETURN:
             # elif P.commandType == CommandType.C_CALL:
